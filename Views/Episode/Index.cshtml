@@ -1,0 +1,20 @@
+
+@model List<Episode>
+
+@{
+    ViewData["Title"] = "Episodios de Rick y Morty";
+}
+
+<h1>Listado de episodios</h1>
+<br>
+<br>
+<div class="grid-container">
+  @foreach (var episode in Model)
+  {
+    <div class="grid-item">
+      <h2>@episode.name</h2>
+      <p>Fecha de emisión: @episode.air_date</p>
+      <p>Episodio: @episode.episode</p>
+    </div>
+  }
+</div>

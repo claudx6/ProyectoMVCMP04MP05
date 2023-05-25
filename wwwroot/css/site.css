@@ -1,0 +1,269 @@
+html {
+  font-size: 14px;
+}
+ 
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+/* Card */
+body {
+  margin-bottom: 60px;
+  background: linear-gradient(135.8deg, rgb(26, 26, 29) 27.1%, rgb(111, 34, 50) 77.5%);
+}
+
+h1 {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+
+  width: 400px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+
+  animation: mymove 5s infinite;
+}
+/* animación del título h1 */
+@keyframes mymove {
+  50% {font: 40px bold;}
+  50% {text-shadow: 10px 20px 30px orange;}
+}
+
+
+/* posición de personajes */
+
+.character-table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 80px;
+  justify-items: center;
+}
+ 
+.card {
+  font-family: "Arial";
+  border: 18px;
+  background-color: white;
+  box-shadow: 5px 5px 15px orange;
+  text-align: center;
+  width: 330px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 10px;
+}
+
+.card-body {
+  margin: 15px;
+}
+
+.card-body h2 {
+  color:#085db8
+}
+
+/* color según el estado del personaje */
+.card-body .alive {
+  color: green;
+  font-weight: bold;
+}
+
+.card-body .dead {
+  color: red;
+  font-weight: bold;
+}
+
+.card-body .unknown{
+  color: purple;
+  font-weight: bold;
+}
+
+
+.card-body p {
+  color: #191919;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+/* efecto animación card */
+.item:hover {
+  background-color: #123488;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  transition: 0.8s;
+  background-image: linear-gradient(to bottom, #ff7300da, #ff8080);
+
+}
+
+
+.card:hover:before,
+.card:hover:after {
+  animation: none;
+  opacity: 0;
+}
+
+.card::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(var(--rotate), #eca644, #e33ce0 43%, #c20054);
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(var(--rotate), #eca644, #e33ce0 43%, #c20054);
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+
+
+/* View Index Episode */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 40px;
+}
+
+.grid-item {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border: 10px solid;
+  transition: background-image 0.3s ease;
+  border-image: linear-gradient(to bottom, #eca644, #e33ce0 43%, #c20054) 1;
+}
+
+.grid-item:hover {
+  background-image: linear-gradient(to bottom, #ff7300da, #ff8080);
+}
+
+.grid-item h2 {
+  color: #0000ff;
+}
+
+  
+/* Navbar */
+.navbar-brand {
+  text-align: left;
+}
+
+ul {
+  border: 1px solid white;
+  font-family: "Chivo Mono", monospace;
+  display: flex;
+  gap: 72px;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  padding: 10px;
+  transition: 0.5s ease;
+}
+
+ul:hover {
+  border: 3px solid #f46b30;
+  border-width: 3px;
+}
+
+ul:hover li a {
+  color: #f46b30;
+  animation: glowing 1s ease-in-out infinite alternate;
+}
+
+ul:hover li a:not(:hover) {
+  color: white;
+  opacity: 0.3;
+  filter: blur(1px);
+}
+
+.navbar-nav {
+  justify-content: flex-end;
+}
+
+.navbar-nav li {
+  margin-left: 10px; 
+} 
+
+
+/* Footer */
+.footer {
+  background-color: #c21053;  
+  border-top: 1px solid #dee2e6;
+
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer p {
+  margin-bottom: 0;
+}
+
+.footer a {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* cambio de color footer */
+
+.footer-text {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.footer-text:hover {
+  color: blue;
+} 
